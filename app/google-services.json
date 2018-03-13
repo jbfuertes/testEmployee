@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "736109230374",
+    "firebase_url": "https://realtimedbtest-b191c.firebaseio.com",
+    "project_id": "realtimedbtest-b191c",
+    "storage_bucket": "realtimedbtest-b191c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:736109230374:android:ff446e8bf28fc534",
+        "android_client_info": {
+          "package_name": "com.john.realtimedb"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "736109230374-1uvikac8f5i7ti5kq69nl024eklkkcpk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCP88ngawPNUu6gND7YY8Z8_jhhNMTd_U0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

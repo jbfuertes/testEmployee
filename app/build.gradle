@@ -1,0 +1,137 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "com.john.realtimedb"
+        minSdkVersion 19
+        targetSdkVersion 27
+        multiDexEnabled true
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        renderscriptTargetApi 19
+        renderscriptSupportModeEnabled true
+
+    }
+
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+
+    buildTypes {
+        release {//"http://api.enguest.com"
+            /*buildConfigField("String", "BASE_URL", "\"http://api.enguest.com\"")
+            buildConfigField("String", "ALT_URL", "\"http://api.enguest.com\"")
+            buildConfigField("String", "BASE_SOCKET", "\"ws://api.enguest.com\"")
+            buildConfigField("Integer", "DEFAULT_PORT", "6868")*/
+            minifyEnabled false
+            useProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            /*applicationVariants.all { variant ->
+                variant.outputs.all { output ->
+                    project.ext { appName = 'Guest' }
+                    def newName = output.outputFile.name
+                    newName = newName.replace("App-", "$project.ext.appName-") //"MyAppName" -> I set my App variables in the root project
+                    //noinspection GroovyAssignabilityCheck
+                    outputFileName = new File(output.outputFile.parent, newName)
+                }
+            }*/
+        }
+        debug {
+            /*buildConfigField("String", "BASE_URL", "\"http://api.enguest.com\"")
+            buildConfigField("String", "ALT_URL", "\"http://api.enguest.com\"")
+            buildConfigField("String", "BASE_SOCKET", "\"ws://api.enguest.com\"")
+            buildConfigField("Integer", "DEFAULT_PORT", "6868")*/
+            minifyEnabled false
+            useProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    /*flavorDimensions "versionCode"
+    productFlavors {
+        FullVersion {
+            dimension "versionCode"
+            buildConfigField "String", "productVersion", "\"full\""
+            applicationId 'com.john.mvpframework.full'
+            resValue "string", "app_name", "Enguest"
+            versionCode 11
+            versionName '1.1.1'
+            minSdkVersion 19
+            targetSdkVersion 26
+        }
+        DemoVersion {
+            dimension "versionCode"
+            buildConfigField "String", "productVersion", "\"demo\""
+            applicationId 'com.john.mvpframework.demo'
+            resValue "string", "app_name", "Enguest"
+            versionCode 11
+            versionName '1.1.1'
+            minSdkVersion 19
+            targetSdkVersion 26
+        }
+    }*/
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:27.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+
+    compile "com.android.support:support-compat:27.1.0"
+    compile 'com.android.support:appcompat-v7:27.1.0'
+    compile 'com.android.support:cardview-v7:27.1.0'
+
+    compile 'com.android.support:design:27.1.0'
+    compile 'com.android.support:support-v4:27.1.0'
+    compile 'com.android.support:recyclerview-v7:27.1.0'
+
+    compile 'com.android.support:multidex:1.0.3'
+
+    compile 'com.jakewharton.picasso:picasso2-okhttp3-downloader:1.1.0'
+    compile 'com.jakewharton.timber:timber:4.5.1'
+    compile 'com.jakewharton:butterknife:8.6.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.2.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    compile 'com.squareup.okhttp3:okhttp:3.8.1'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.8.1'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+
+    compile 'com.google.code.gson:gson:2.8.2'
+
+    compile 'com.google.firebase:firebase-database:11.8.0'
+    compile 'com.google.firebase:firebase-core:11.8.0'
+
+    compile 'com.google.dagger:dagger:2.12'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.12'
+
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    compile 'io.reactivex.rxjava2:rxjava:2.1.8'
+    compile 'com.jakewharton.rxbinding2:rxbinding:2.1.1'
+    compile 'com.jakewharton.rxbinding2:rxbinding-appcompat-v7:2.1.1'
+    compile 'com.jakewharton.rxbinding2:rxbinding-support-v4:2.1.0'
+    compile 'com.jakewharton.rxbinding2:rxbinding-design:2.1.1'
+    compile 'com.jakewharton.rxbinding2:rxbinding-recyclerview-v7:2.1.1'
+
+    compile 'com.github.pwittchen:reactivenetwork-rx2:0.12.3'
+
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.mockito:mockito-core:2.11.0'
+
+    compile 'junit:junit:4.12'
+}
+
+apply plugin: 'com.google.gms.google-services'

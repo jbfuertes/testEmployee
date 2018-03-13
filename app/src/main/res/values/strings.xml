@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">RealTimeDb</string>
+    <string name="add_button">Add Employee</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="email">Email Address</string>
+</resources>
